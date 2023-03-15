@@ -1,0 +1,34 @@
+﻿@model ComparaçãoDeFicheirosExcel.Models.PathFiles
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AdminCriarCategoria</title>
+</head>
+<body style="margin-top:2%">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+                Ficheiro 1
+                @Html.TextBoxFor(model => model.path_ficheiro1, new { type = "file" })
+                @Html.ValidationMessageFor(model => model.path_ficheiro1)
+        </div>
+
+        <div class="form-group" style="margin-top:2%">
+                Ficheiro 2
+                @Html.TextBoxFor(model => model.path_ficheiro2, new { type = "file" })
+                @Html.ValidationMessageFor(model => model.path_ficheiro2)
+        </div>
+
+        <div class="form-group">
+                <input type="submit" value="Upload" class="btn btn-default" />
+        </div>
+    }
+
+</body>
+</html>
+
